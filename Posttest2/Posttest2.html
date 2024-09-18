@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posttest2</title>
+    <style>
+        /* Cool gradient background with blue and green tones */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #a2c2e9, #b9e3c6);
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+            transition: transform 0.4s, box-shadow 0.4s;
+        }
+
+        .container:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 40px;
+            margin-bottom: 30px;
+            color: #4a90e2;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .order-details {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .order-details div {
+            background-color: #e0f7fa;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            font-size: 16px;
+            color: #4a90e2;
+        }
+
+        .order-details input[type="date"] {
+            border: 2px solid #4a90e2;
+            padding: 8px;
+            border-radius: 10px;
+            background-color: #e0f2f1;
+            color: #4a90e2;
+            font-weight: bold;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+            background-color: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        th {
+            background-color: #4a90e2;
+            color: #fff;
+            padding: 15px;
+            font-size: 18px;
+            text-transform: uppercase;
+        }
+
+        td {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        td img {
+            width: 80px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        td input[type="number"] {
+            width: 50px;
+            padding: 5px;
+            border-radius: 10px;
+            border: 2px solid #4a90e2;
+            color: #4a90e2;
+            text-align: center;
+        }
+
+        .total, .tax, .bill {
+            font-weight: bold;
+            font-size: 18px;
+            background-color: #e0f7fa;
+        }
+
+        .payment-methods {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .payment-methods input {
+            margin: 15px;
+            transform: scale(1.2);
+            cursor: pointer;
+        }
+
+        .payment-methods label {
+            margin-left: 10px;
+            font-size: 18px;
+            color: #4a90e2;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            background-color: #4a90e2;
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        footer a {
+            color: #e3f2fd;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        th, td {
+            transition: background-color 0.3s ease;
+        }
+
+        th:hover, td:hover {
+            background-color: #b3e5fc;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+
+            .order-details {
+                grid-template-columns: 1fr;
+            }
+
+            td img {
+                width: 60px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            th, td {
+                display: block;
+                text-align: left;
+                padding: 10px 0;
+            }
+
+            table {
+                font-size: 14px;
+            }
+
+            td img {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1><b>BUKTI PEMESANAN</b></h1>
+
+        <div class="order-details">
+            <div>
+                <b>Nama Pelayan:</b> Ahmad Nur Fauzan
+            </div>
+            <div>
+                <b>Tanggal Pemesanan: </b>
+                <input type="date" name="tanggal" id="tanggal">
+            </div>
+            <div>
+                <b>Nama Pemesan:</b> Abdullah Azam
+            </div>
+            <div>
+              <b>Alamat Pemesanan:</b> Jl. Merdeka No.15, Kota Balikpapan
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Nama Menu</th>
+                    <th>Jumlah</th>
+                    <th>Harga Satuan</th>
+                    <th>Total Harga</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <img src="nasi-goreng.jpeg" alt="Nasi Goreng Spesial"><br>Nasi Goreng Spesial
+                    </td>
+                    <td><input type="number" value="1"> Porsi</td>
+                    <td>Rp. 25.000</td>
+                    <td>Rp. 25.000</td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="es-teh-manis.jpeg" alt="Es Teh Manis"><br>Es Teh Manis
+                    </td>
+                    <td><input type="number" value="1"> Gelas</td>
+                    <td>Rp. 5.000</td>
+                    <td>Rp. 5.000</td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="total">Total Pesanan</td>
+                    <td>Rp. 30.000</td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="tax">Pajak</td>
+                    <td>Rp. 2.000</td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="bill">Total Tagihan</td>
+                    <td>Rp. 32.000</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="payment-methods">
+            <b>Metode Pembayaran:</b><br>
+            <input type="radio" name="pembayaran" value="bca" id="bca">
+            <label for="bca">Bank BCA</label>
+            <input type="radio" name="pembayaran" value="bri" id="bri">
+            <label for="bri">Bank BRI</label>
+            <input type="radio" name="pembayaran" value="ovo" id="ovo">
+            <label for="ovo">Ovo</label>
+            <input type="radio" name="pembayaran" value="gopay" id="gopay">
+            <label for="gopay">Gopay</label>
+        </div>
+
+        <footer>
+            <table style="width: 100%; background-color: #4a90e2; color: white; padding: 10px; border-radius: 15px;">
+                <tr>
+                    <td style="text-align: center;">
+                        <img src="logo-resto.jpeg" alt="Logo Resto" style="width: 250px; height: auto;">
+                    </td>
+                    <td>
+                        <ol style="list-style: none; padding-left: 0;">
+                            <li>Nama: Raihan Rahmadini Putri</li>
+                            <li>NIM: 2309106008</li>
+                            <li>Instagram: <a href="https://instagram.com/rhanputrii" target="_blank" style="color: #e3f2fd; text-decoration: none;">@rhanputrii</a></li>
+                        </ol>
+                    </td>
+                </tr>
+            </table>
+        </footer>
+    </div>
+</body>
+
+</html>
