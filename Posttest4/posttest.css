@@ -1,0 +1,726 @@
+.justified-text {
+    text-align: justify;
+}
+
+nav {
+    position: relative;
+    z-index: 10; /* Pastikan elemen penting berada di atas */
+  }  
+
+body {
+margin: 0;
+font-family: Arial, sans-serif;
+background-color: #f4f4f9;
+color: #333;
+transition: background-color 0.3s, color 0.3s;
+}
+
+/* Mode Gelap */
+body.dark-mode {
+    background-color: #674636;
+    color: #ddd;
+}
+
+/* Header */
+header {
+    background: linear-gradient(45deg, #AAB396, #F7EED3);
+    padding: 20px;
+    color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode header {
+    background: linear-gradient(45deg, #674636, #AAB396);
+}
+
+/* Logo */
+.logo {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+}
+
+.logo span {
+    color: #F7EED3;
+}
+
+/* Style for the login form */
+.login-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #4cae4c;
+}
+
+/* Tombol Mode Toggle */
+.mode-toggle {
+    cursor: pointer;
+    padding: 5px 20px;
+    background-color: #FFF8E8;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    margin-left: 20px;
+    transition: background-color 0.3s, color 0.3s;
+    margin-right: 15px; /* This will add space between Dark Mode button and burger icon */
+}
+
+.mode-toggle:hover {
+    background-color: #F7EED3;
+}
+
+body.dark-mode .mode-toggle {
+    background-color: #AAB396;
+    color: white;
+}
+
+/* Navigasi */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* List Navigasi */
+ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    margin: 0 15px;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s;
+}
+
+ul li a:hover {
+    color: #AAB396;
+}
+
+/* Underline efek hover */
+ul li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #333;
+    transition: width 0.3s;
+}
+
+ul li a:hover::after {
+    width: 100%;
+}
+
+body.dark-mode ul li a {
+    color: #ddd;
+}
+
+body.dark-mode ul li a:hover::after {
+    background: #ddd;
+}
+
+/* Burger Menu */
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 30px;
+    height: 4px;
+    background-color: #333;
+    margin: 5px;
+    transition: background-color 0.3s;
+}
+
+body.dark-mode .burger div {
+    background-color: #ddd;
+}
+
+/* Navigasi Mobile */
+.nav-links {
+    display: flex;
+}
+
+.nav-links.mobile {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 10px;
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .nav-links.mobile {
+    background-color: #674636;
+    border: 1px solid #AAB396;
+}
+
+.nav-links.mobile li a {
+    color: #333;
+    margin: 10px 0;
+}
+
+body.dark-mode .nav-links.mobile li a {
+    color: #ddd;
+}
+
+/* Responsive untuk tampilan kecil */
+@media (max-width: 768px) {
+    .burger {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-links.mobile {
+        display: flex;
+    }
+}
+
+.hero-content {
+    padding: 80px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #AAB396, #F7EED3);
+    color: #333;
+    margin-top: 20px;
+    border-radius: 15px;
+}
+
+body.dark-mode .hero-content {
+    background: linear-gradient(135deg, #674636, #AAB396);
+    color: #ddd;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+}
+
+.donate-btn {
+    background-color: #FFF8E8;
+    color: #AAB396;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+    margin-top: 20px;
+}
+
+.donate-btn:hover {
+    background-color: #F7EED3;
+    color: #333;
+    transform: translateY(-5px);
+}
+
+.about-section {
+    background-color: #F7EED3;
+    padding: 60px 20px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+body.dark-mode .about-section {
+    background-color: #674636;
+    color: #ddd;
+}
+
+body.dark-mode .about-section p {
+    color: #ccc;
+}
+
+.about-section h2 {
+    font-size: 2.5rem;
+    color: #AAB396;
+    margin-bottom: 20px;
+}
+
+.about-section p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    color: #666;
+    line-height: 1.8;
+}
+
+.about-image {
+    margin-top: 30px;
+}
+
+.about-image img {
+    width: 300px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.programs-section {
+    background-color: #FFF8E8;
+    text-align: center;
+}
+
+body.dark-mode .programs-section {
+    background-color: #674636;
+    color: #ddd;
+}
+
+.programs-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #AAB396;
+}
+
+.program-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.small-image1 {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.small-image2 {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.small-image3 {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.card {
+    background: #F7EED3;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s;
+}
+
+body.dark-mode .card {
+    background-color: linear-gradient(45deg, #674636, #AAB396);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    background-color: #AAB396;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+body.dark-mode .card h3 {
+    color: #333;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #555;
+}
+
+body.dark-mode .card p {
+    color: #333;
+}
+
+.donation-section {
+    background-color: #AAB396;
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    border-radius: 15px;
+    margin: 40px 0;
+}
+
+body.dark-mode .donation-section {
+    background-color: linear-gradient(45deg, #674636, #AAB396);
+    color: #333;
+}
+
+.donation-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.donation-section p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.donation-section .donate-btn {
+    background-color: #F7EED3;
+    color: #333;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+    background-color: #FFF8E8;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+body.dark-mode .testimonials-section {
+    background-color: #674636;
+    color: #ddd;
+}
+
+.testimonials-section h2 {
+    font-size: 2.5rem;
+    color: #AAB396;
+    margin-bottom: 40px;
+}
+
+.testimonial-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.testimonial-card {
+    background-color: #F7EED3;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+body.dark-mode .testimonial-card {
+    background-color: linear-gradient(45deg, #674636, #AAB396);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px);
+}
+
+.testimonial-card p {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #555;
+}
+
+body.dark-mode .testimonial-card p {
+    color: #333;
+}
+
+.testimonial-card h3 {
+    font-size: 1.3rem;
+    color: #333;
+    margin-top: 15px;
+}
+
+body.dark-mode .testimonial-card h3 {
+    color: #333;
+}
+
+/* Contact Section Styling */
+.contact-section {
+    background-color: #AAB396;
+    padding: 40px 20px;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.contact-left, .contact-right {
+    flex-basis: 45%;
+    min-width: 300px;
+}
+
+.contact-left h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.contact-left p {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.social-links {
+    margin-bottom: 20px;
+}
+
+.social-links .social-icon {
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 24px;
+    color: white;
+    border: 1px solid white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+}
+
+.contact-right h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.contact-links {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-links li {
+    margin-bottom: 10px;
+}
+
+.contact-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.contact-links a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    margin-top: 20px;
+    text-align: center;
+}
+
+footer p {
+    font-size: 14px;
+    margin: 0;
+}
+
+/* Dark Mode Contact Section */
+body.dark-mode .contact-section {
+    background-color: #AAB396;
+    color: #333;
+}
+
+body.dark-mode .social-links .social-icon {
+    color: #333;
+    border-color: #333;
+}
+
+body.dark-mode .contact-links a {
+    color: #333;
+}
+
+body.dark-mode .contact-links a:hover {
+    text-decoration: underline;
+}
+
+body.dark-mode footer p {
+    color: #333;
+}
+
+/* Popup Styling */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.popup {
+    background: #333;
+    padding: 100px;
+    max-width: 900px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+    max-height: 80vh;
+}
+
+.popup h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #FFF8E8;
+}
+
+.payment-methods {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Mengatur jumlah kolom berdasarkan lebar kontainer */
+    gap: 20px; /* Jarak antar elemen */
+    justify-items: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.payment-methods ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Layout responsif untuk setiap ul */
+    gap: 20px; /* Jarak antar list item */
+    justify-items: center;
+}
+
+.payment-methods ul li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color:  #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    width: 150px;
+    height: 120px; /* Sesuaikan ukuran tinggi */
+    text-align: center;
+}
+
+.payment-methods ul li:hover {
+    transform: scale(1.05); /* Efek hover untuk memperbesar sedikit */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.payment-methods ul li img {
+    max-width: 80px; /* Ukuran gambar maksimum */
+    max-height: 50px; /* Batasi tinggi gambar */
+    object-fit: contain; /* Menjaga proporsi gambar */
+    margin-bottom: 10px;
+}
+
+.payment-methods ul li .method-name {
+    margin-top: 5px;
+    font-size: 1rem; /* Sesuaikan ukuran teks */
+    font-weight: bold;
+    color: #333;
+}
+
+.close-popup {
+    display: block;
+    background-color: #AAB396;
+    color: #FFF8E8;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    margin: 20px auto 0; /* Margin otomatis untuk memposisikan tombol di tengah */
+    width: fit-content; /* Agar tombol menyesuaikan konten */
+}
+
+.close-popup:hover {
+    background-color: #674636;
+}
+
+
+@media (max-width: 768px) {
+.payment-methods {
+    padding: 10px;
+    width: 100%;
+    justify-content: center; /* Center the entire payment section */
+}
+
+.payment-methods ul li {
+    width: 180px; /* Slightly larger for readability on mobile */
+    height: 140px;
+}
+
+.payment-methods ul {
+    flex-direction: column; /* Ensure items stack vertically on mobile */
+}
+}
+
+/* Dark mode support */
+body.dark-mode .popup {
+    background-color: #333;
+    color: #ddd;
+}
+
+body.dark-mode .popup h2,
+body.dark-mode .payment-methods h3,
+body.dark-mode .payment-methods ul li .method-name {
+    color: #555;
+}
+
+body.dark-mode .payment-methods ul li {
+    border-bottom-color: #555;
+}
+
+body.dark-mode .close-popup {
+    background-color: #666;
+}
